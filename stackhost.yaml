@@ -15,7 +15,7 @@ commands:
   package: '' # apt packages, space-separated (must be approved)
   build:
     - "pip install splusthon"
-  start: ""
+  start: "python sorush_boy.py"
 
 repository:
   branch: 'main'
