@@ -4,20 +4,20 @@
 # Version: 2.0.0
 
 user:
-  name: string
-  github: string
+  name: "AdnanEternal"
+  github: "AdnanEternal"
 
 runtime:
   # Supported runtimes: python, node, go, rust, ruby, java, php, dotnet, elixir, perl, swift
-  image: string # e.g., python:3.11-slim or node:22
+  image: python:3.12-slim # e.g., python:3.11-slim or node:22
 
 commands:
-  package: string # apt packages, space-separated (must be approved)
+  package: '' # apt packages, space-separated (must be approved)
   build:
+    - "pip insall splusthon"
     - string
     - string
-    - string
-  start: string # e.g., "python3 bot.py"
+  start: "python3 sorush_boy.py"
 
 repository:
   branch: string
