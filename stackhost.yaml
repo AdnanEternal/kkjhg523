@@ -9,7 +9,7 @@ user:
 
 runtime:
   # Supported runtimes: python, node, go, rust, ruby, java, php, dotnet, elixir, perl, swift
-  image: "python:3.14-slim" # e.g., python:3.11-slim or node:22
+  image: python:3.14-slim # e.g., python:3.11-slim or node:22
 
 commands:
   package: '' # apt packages, space-separated (must be approved)
@@ -18,8 +18,8 @@ commands:
   start: "python3 sorush_boy.py"
 
 repository:
-  branch: 'mail'
-  auto_deploy: false
+  branch: 'main'
+  auto_deploy: true
 
 env:
   # - KEY:VALUE
