@@ -26,7 +26,7 @@ blocked_gif_ids = load_blacklist()
 # NewMessage.Event(original_update=UpdateNewChannelMessage(message=Message(id=98, peer_id=PeerChannel(channel_id=23094346), date=datetime.datetime(2026, 7, 17, 13, 4, 31, tzinfo=datetime.timezone.utc), message='.', out=False, mentioned=False, media_unread=False, silent=False, post=False, from_scheduled=False, legacy=False, edit_hide=False, pinned=False, noforwards=False, invert_media=False, from_id=PeerUser(user_id=49245702), fwd_from=None, via_bot_id=None, reply_to=None, media=None, reply_markup=None, entities=[], views=None, forwards=None, replies=None, edit_date=None, post_author=None, grouped_id=None, reactions=None, restriction_reason=[], ttl_period=None), pts=127, pts_count=1), pattern_match=None, message=Message(id=98, peer_id=PeerChannel(channel_id=23094346), date=datetime.datetime(2026, 7, 17, 13, 4, 31, tzinfo=datetime.timezone.utc), message='.', out=False, mentioned=False, media_unread=False, silent=False, post=False, from_scheduled=False, legacy=False, edit_hide=False, pinned=False, noforwards=False, invert_media=False, from_id=PeerUser(user_id=49245702), fwd_from=None, via_bot_id=None, reply_to=None, media=None, reply_markup=None, entities=[], views=None, forwards=None, replies=None, edit_date=None, post_author=None, grouped_id=None, reactions=None, restriction_reason=[], ttl_period=None))
 
 
-blocked_words=['بچه کونی','بیو چک']
+blocked_words=['بچه کونی','بیو چک','بیوچک','رل پی','رلپی','فحش','لاشی','https://']
 print()
 
 
@@ -39,7 +39,7 @@ SESSION_STRING = '1AwASaW0tc2VydmVyLnNwbHVzLmlyAbuFef4XemrFrCyEr4NnZ66Ydrtstd-F9
 
 TARGET_ENTITY = -1000023094346
 ADMINS_ID='AdnanEternal'
-call_word="ربات"
+call_word="گاردی"
 START_WORD='لیست قفل'
 
 
@@ -112,7 +112,7 @@ async def main():
                 if gif_id in blocked_gif_ids:
                     await client.delete_messages(event.chat_id, message_ids=[event.message.id])
             
-            if event.raw_text.strip().lower()[:4] == call_word:
+            if event.raw_text.strip().lower()[:len(call_word)] == call_word:
                 # await client.send_message(TARGET_ENTITY, message='6565')
                 await event.reply(
                     openai_client.chat.completions.create(  
@@ -124,12 +124,7 @@ async def main():
 
     await client.run_until_disconnected()
 
-if __name__ == '__main__':
-    try:
-        asyncio.run(main())
-        
-    except asyncio.exceptions.CancelledError , KeyboardInterrupt:
-        print('goodby')
+asyncio.run(main())
 
 
 
