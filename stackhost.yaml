@@ -1,1 +1,28 @@
 
+# StackHost configuration file
+
+# Version: 2.0.0
+
+user:
+  name: string
+  github: string
+
+runtime:
+  # Supported runtimes: python, node, go, rust, ruby, java, php, dotnet, elixir, perl, swift
+  image: string # e.g., python:3.11-slim or node:22
+
+commands:
+  package: string # apt packages, space-separated (must be approved)
+  build:
+    - string
+    - string
+    - string
+  start: string # e.g., "python3 bot.py"
+
+repository:
+  branch: string
+  auto_deploy: boolean
+
+env:
+  - KEY:VALUE
+  - KEY:VALUE
