@@ -14,7 +14,7 @@ runtime:
 commands:
   package: '' # apt packages, space-separated (must be approved)
   build:
-    # - "pip install splusthon"
+    - ""
   start: ""
 
 repository:
