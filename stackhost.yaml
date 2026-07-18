@@ -15,9 +15,7 @@ commands:
   package: '' # apt packages, space-separated (must be approved)
   build:
     - "pip install splusthon"
-    - "pip install asyncio"
     - "pip install openai"
-    - "pip install json"
   start: "python sorush_boy.py"
 
 repository:
