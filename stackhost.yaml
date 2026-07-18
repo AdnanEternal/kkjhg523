@@ -14,7 +14,7 @@ runtime:
 commands:
   package: '' # apt packages, space-separated (must be approved)
   build:
-    - "pip insall splusthon"
+    - "pip install splusthon"
   start: "python3 sorush_boy.py"
 
 repository:
