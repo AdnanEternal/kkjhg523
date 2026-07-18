@@ -15,14 +15,12 @@ commands:
   package: '' # apt packages, space-separated (must be approved)
   build:
     - "pip insall splusthon"
-    - string
-    - string
   start: "python3 sorush_boy.py"
 
 repository:
-  branch: string
-  auto_deploy: boolean
+  branch: 'mail'
+  auto_deploy: false
 
 env:
-  - KEY:VALUE
-  - KEY:VALUE
+  # - KEY:VALUE
+  # - KEY:VALUE
